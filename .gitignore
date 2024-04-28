@@ -1,4 +1,7 @@
-build
+build/flutter_assets
+build/ef746459e76737fcf6f3182f97eb55ec
+build/42aecaae4b71bdb20ce84a1d6000b2ce.cache.dill.track.dill
+build/last_build_run.json
 .dart_tool
 .idea
 
