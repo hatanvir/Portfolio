@@ -10,6 +10,15 @@ void main() {
       title: "Application",
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
+      themeMode: ThemeMode.dark,
+      darkTheme: ThemeData(
+        appBarTheme: const AppBarTheme(
+          color: Colors.black,
+          titleTextStyle: TextStyle(
+            color: Colors.white,
+          ),
+        )
+      ),
     ),
   );
 }
