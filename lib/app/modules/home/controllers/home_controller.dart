@@ -1,12 +1,16 @@
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:scrollview_observer/scrollview_observer.dart';
 
 class HomeController extends GetxController {
-  //TODO: Implement HomeController
+  ScrollController scrollController = ScrollController();
+  ListObserverController? observerController;
 
-  final count = 0.obs;
+
   @override
   void onInit() {
     super.onInit();
+    observerController = ListObserverController(controller: scrollController);
   }
 
   @override
@@ -18,6 +22,4 @@ class HomeController extends GetxController {
   void onClose() {
     super.onClose();
   }
-
-  void increment() => count.value++;
 }
