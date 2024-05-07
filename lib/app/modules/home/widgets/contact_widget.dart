@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/app/extensions/divider_extension.dart';
-import 'package:portfolio/app/modules/common_title.dart';
+import 'package:portfolio/app/widgets/common_title.dart';
 
 class ContactWidget extends StatelessWidget {
   const ContactWidget({super.key});
