@@ -20,20 +20,12 @@ class HomeSilverAppbar extends StatelessWidget {
       forceElevated: true,
       title: Text(label),
       actions: [
-        CustomTextButton(
-            name: 'Home',
-            onTap: () {
-              jumpTo(index: 0);
-            }),
-        CustomTextButton(name: 'About', onTap: () {}),
-        CustomTextButton(
-            name: 'Projects',
-            onTap: () {
-              jumpTo(index: 3);
-            }),
-        CustomTextButton(name: 'Blogs', onTap: () {}),
-        CustomTextButton(name: 'Achievements', onTap: () {}),
-        CustomTextButton(name: 'Contact', onTap: () {})
+        CustomTextButton(name: 'Home', onTap: () => jumpTo(index: 0)),
+        CustomTextButton(name: 'About', onTap: () => jumpTo(index: 1)),
+        CustomTextButton(name: 'Skills', onTap: () => jumpTo(index: 2)),
+        CustomTextButton(name: 'Projects', onTap: () => jumpTo(index: 3)),
+        CustomTextButton(name: 'Blogs', onTap: () => jumpTo(index: 5)),
+        CustomTextButton(name: 'Contact', onTap: () => jumpTo(index: 6)),
       ],
     );
   }

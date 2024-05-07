@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/app/extensions/divider_extension.dart';
+import 'package:portfolio/app/modules/enums/contact_enum.dart';
 import 'package:portfolio/app/widgets/common_title.dart';
+import 'package:portfolio/app/widgets/responsive_widget.dart';
 
 class ContactWidget extends StatelessWidget {
   const ContactWidget({super.key});
@@ -11,18 +13,144 @@ class ContactWidget extends StatelessWidget {
     return Container(
       color: Colors.black87,
       alignment: Alignment.center,
-      padding: EdgeInsets.only(left: 15,right: 15,top: 25,bottom: 30),
       child: Column(
         children: [
-          CommonTitle(title: 'Contact',fontSize: 30,),
-          10.height,
-          /* Wrap(
-              runSpacing: 20,
-              spacing: 15,
-              children: [1,2,3,4,5,6,7,1,1,1,1,1,1].map((e) => _linerProgressWidget()).toList()
-          )*/
+          _contactDividerWidget(
+            child: CommonTitle(
+              title: 'Contact',
+              fontSize: 30,
+            ),
+          ),
+          20.height,
+          ResponsiveWidget(
+              desktop: _contactInfoWidgetLarge(),
+              mobile: _contactInfoWidgetSmall(),
+              tablet: _contactInfoWidgetLarge()),
+          20.height,
+          _contactDividerWidget(
+            child: Row(
+              children: [
+                Icon(Icons.email),
+                5.width,
+                Icon(Icons.email),
+                5.width,
+                Icon(Icons.email),
+                5.width,
+                Icon(Icons.email),
+              ],
+            ),
+          ),
+          80.height,
+          CommonTitle(
+            title: 'Thank You',
+            fontSize: 30,
+          ),
+          100.height,
         ],
       ),
-    );;
+    );
   }
+
+  Widget _contactInfoWidgetLarge() => Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              _contactItem(
+                  icon: Icons.email_outlined,
+                  text: 'tanvirhasan553@gmail.com',
+                  color: Colors.amber,
+                  type: ContactType.email),
+              10.width,
+              _contactItem(
+                  icon: Icons.email_outlined,
+                  text: 'tanvirhasan553@gmail.com',
+                  color: Colors.amber,
+                  type: ContactType.email),
+            ],
+          ),
+          10.height,
+          _contactItem(
+              icon: Icons.email_outlined,
+              text: 'tanvirhasan553@gmail.com',
+              color: Colors.amber,
+              type: ContactType.email)
+        ],
+      );
+
+  Widget _contactInfoWidgetSmall() => Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          _contactItem(
+              icon: Icons.email_outlined,
+              text: 'tanvirhasan553@gmail.com',
+              color: Colors.amber,
+              type: ContactType.email),
+          10.width,
+          _contactItem(
+              icon: Icons.email_outlined,
+              text: 'tanvirhasan553@gmail.com',
+              color: Colors.amber,
+              type: ContactType.email),
+          10.height,
+          _contactItem(
+              icon: Icons.email_outlined,
+              text: 'tanvirhasan553@gmail.com',
+              color: Colors.amber,
+              type: ContactType.email)
+        ],
+      );
+
+  Widget _contactItem(
+          {required IconData icon,
+          required String text,
+          required MaterialColor color,
+          required ContactType type}) =>
+      InkWell(
+        onTap: () {},
+        child: Card(
+          color: Colors.black87,
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+          child: Container(
+            padding: const EdgeInsets.all(15),
+            width: 300,
+            child: Row(
+              children: [
+                Icon(
+                  icon,
+                  color: Colors.white,
+                ),
+                10.width,
+                Text(
+                  text,
+                  style: TextStyle(
+                      color: color, fontSize: 18, fontWeight: FontWeight.bold),
+                )
+              ],
+            ),
+          ),
+        ),
+      );
+
+  _contactDividerWidget({required Widget child}) => Row(
+        children: [
+          Expanded(
+            child: Container(
+              height: 2,
+              color: Colors.amber,
+            ),
+          ),
+          15.width,
+          child,
+          15.width,
+          Expanded(
+            child: Container(
+              height: 2,
+              color: Colors.amber,
+            ),
+          ),
+        ],
+      );
 }
