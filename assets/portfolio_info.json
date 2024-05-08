@@ -1,13 +1,59 @@
 {
   "personal_info": {
     "name": "Tanvir Hasan",
-    "bio": "Self-motivated and hardworking Android and Flutter developer. Dedicated to learning new technology and love to solve problem in online judge.",
+    "designation": "Native Android and Flutter \ndeveloper",
+    "about": "Self-motivated and hardworking Android and Flutter developer. Dedicated to learning new technology and love to solve problem in online judge.",
     "cv_download_link": ""
   },
 
   "skill_set":[
     {
+      "name": "Native Android",
+      "details": "",
+      "image": "assets/images/android.png"
+    }
+  ],
 
+  "projects":[
+    {
+      "name": "E-Commerce",
+      "details": "A simple e-commerce app",
+      "image": "assets/images/android.png",
+      "link": "link"
+    }
+  ],
+
+  "experiences": [
+    {
+      "from": "2020",
+      "to": "Present",
+      "position": "Android Developer",
+      "location": "Dhaka,Bangladesh",
+      "jobType": "Full-Time",
+      "responsibility": "Position responsibility",
+      "technology": "Android, Flutter, Dart"
+    }
+  ],
+
+  "blogs": [
+    {
+      "title": "New blog",
+      "image": "assets/images/android.png",
+      "link": "Android, Flutter, Dart"
+    }
+  ],
+
+  "contact": {
+    "email": "tanvirhasan553@gmail.com",
+    "phone": "0189898989898",
+    "location": "Dhaka"
+  },
+
+  "important_link": [
+    {
+      "name": "Github",
+      "image": "assets/images/android.png",
+      "link": ""
     }
   ]
 }

@@ -10,7 +10,9 @@ class CustomTextButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
         onPressed: onTap,
-        child: Text(name),
+        child: Text(name,style: TextStyle(
+          color: Colors.amber
+        ),),
     );
   }
 }

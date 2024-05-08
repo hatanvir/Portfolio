@@ -1,12 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:portfolio/app/enums/contact_enum.dart';
 import 'package:portfolio/app/extensions/divider_extension.dart';
-import 'package:portfolio/app/modules/enums/contact_enum.dart';
+import 'package:portfolio/app/modules/home/controllers/home_controller.dart';
 import 'package:portfolio/app/widgets/common_title.dart';
 import 'package:portfolio/app/widgets/responsive_widget.dart';
 
 class ContactWidget extends StatelessWidget {
-  const ContactWidget({super.key});
+  HomeController controller = Get.find();
+  ContactWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -59,21 +62,21 @@ class ContactWidget extends StatelessWidget {
             children: [
               _contactItem(
                   icon: Icons.email_outlined,
-                  text: 'tanvirhasan553@gmail.com',
+                  text: controller.portfolioData.value.contact?.email??'',
                   color: Colors.amber,
                   type: ContactType.email),
               10.width,
               _contactItem(
-                  icon: Icons.email_outlined,
-                  text: 'tanvirhasan553@gmail.com',
+                  icon: Icons.phone,
+                  text: controller.portfolioData.value.contact?.phone??'',
                   color: Colors.amber,
                   type: ContactType.email),
             ],
           ),
           10.height,
           _contactItem(
-              icon: Icons.email_outlined,
-              text: 'tanvirhasan553@gmail.com',
+              icon: Icons.location_on_rounded,
+              text: controller.portfolioData.value.contact?.location??'',
               color: Colors.amber,
               type: ContactType.email)
         ],
@@ -84,19 +87,19 @@ class ContactWidget extends StatelessWidget {
         children: [
           _contactItem(
               icon: Icons.email_outlined,
-              text: 'tanvirhasan553@gmail.com',
+              text: controller.portfolioData.value.contact?.email??'',
               color: Colors.amber,
               type: ContactType.email),
           10.width,
           _contactItem(
-              icon: Icons.email_outlined,
-              text: 'tanvirhasan553@gmail.com',
+              icon: Icons.phone,
+              text: controller.portfolioData.value.contact?.phone??'',
               color: Colors.amber,
               type: ContactType.email),
           10.height,
           _contactItem(
-              icon: Icons.email_outlined,
-              text: 'tanvirhasan553@gmail.com',
+              icon: Icons.location_on_rounded,
+              text: controller.portfolioData.value.contact?.location??'',
               color: Colors.amber,
               type: ContactType.email)
         ],

@@ -10,6 +10,8 @@ dependencies:
   get: 4.6.6
   fvm: ^3.1.4
   scrollview_observer:
+  flutter_screenutil: ^5.9.0
+
   flutter: 
     sdk: flutter
 
@@ -23,4 +25,5 @@ flutter:
 
   assets:
    - assets/
+   - assets/images/
 

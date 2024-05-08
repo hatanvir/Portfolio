@@ -13,18 +13,19 @@ class CustomDrawer extends StatelessWidget {
     return Drawer(
       child: ListView(
         children: [
-          CustomTextButton(name: 'Home', onTap: () => jumpTo(index: 0)),
-          CustomTextButton(name: 'About', onTap: () => jumpTo(index: 1)),
-          CustomTextButton(name: 'Skills', onTap: () => jumpTo(index: 2)),
-          CustomTextButton(name: 'Projects', onTap: () => jumpTo(index: 3)),
-          CustomTextButton(name: 'Blogs', onTap: () => jumpTo(index: 5)),
-          CustomTextButton(name: 'Contact', onTap: () => jumpTo(index: 6)),
+          CustomTextButton(name: 'Home', onTap: () => jumpTo(index: 0,context: context)),
+          CustomTextButton(name: 'About', onTap: () => jumpTo(index: 1,context: context)),
+          CustomTextButton(name: 'Skills', onTap: () => jumpTo(index: 2,context: context)),
+          CustomTextButton(name: 'Projects', onTap: () => jumpTo(index: 3,context: context)),
+          CustomTextButton(name: 'Blogs', onTap: () => jumpTo(index: 5,context: context)),
+          CustomTextButton(name: 'Contact', onTap: () => jumpTo(index: 6,context: context)),
         ],
       ),
     );
   }
 
-  void jumpTo({required int index}) {
+  void jumpTo({required int index, required BuildContext context}) {
+    Scaffold.of(context).closeDrawer();
     controller.observerController?.animateTo(
         index: index, duration: const Duration(seconds: 1), curve: Curves.ease);
   }

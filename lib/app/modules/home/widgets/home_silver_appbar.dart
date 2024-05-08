@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:portfolio/app/common/custom_text_button.dart';
 import 'package:portfolio/app/modules/home/controllers/home_controller.dart';
+import 'package:portfolio/app/widgets/responsive_widget.dart';
 
 class HomeSilverAppbar extends StatelessWidget {
   HomeController controller = Get.find();
@@ -19,13 +20,16 @@ class HomeSilverAppbar extends StatelessWidget {
       snap: false,
       forceElevated: true,
       title: Text(label),
+      iconTheme: IconThemeData(color: Colors.amber),
       actions: [
-        CustomTextButton(name: 'Home', onTap: () => jumpTo(index: 0)),
-        CustomTextButton(name: 'About', onTap: () => jumpTo(index: 1)),
-        CustomTextButton(name: 'Skills', onTap: () => jumpTo(index: 2)),
-        CustomTextButton(name: 'Projects', onTap: () => jumpTo(index: 3)),
-        CustomTextButton(name: 'Blogs', onTap: () => jumpTo(index: 5)),
-        CustomTextButton(name: 'Contact', onTap: () => jumpTo(index: 6)),
+        if (!ResponsiveWidget.isMobile(context)) ...[
+          CustomTextButton(name: 'Home', onTap: () => jumpTo(index: 0)),
+          CustomTextButton(name: 'About', onTap: () => jumpTo(index: 1)),
+          CustomTextButton(name: 'Skills', onTap: () => jumpTo(index: 2)),
+          CustomTextButton(name: 'Projects', onTap: () => jumpTo(index: 3)),
+          CustomTextButton(name: 'Blogs', onTap: () => jumpTo(index: 5)),
+          CustomTextButton(name: 'Contact', onTap: () => jumpTo(index: 6)),
+        ]
       ],
     );
   }

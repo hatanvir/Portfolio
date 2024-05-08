@@ -1,14 +1,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:portfolio/app/common/custom_text_button.dart';
 import 'package:portfolio/app/extensions/divider_extension.dart';
+import 'package:portfolio/app/modules/home/controllers/home_controller.dart';
 import 'package:portfolio/app/modules/home/widgets/skill_widget.dart';
 import 'package:portfolio/app/widgets/common_button.dart';
 import 'package:portfolio/app/widgets/responsive_padding.dart';
 import 'package:portfolio/app/widgets/responsive_widget.dart';
 
 class HomeWidget extends StatelessWidget {
-  const HomeWidget({super.key});
+  HomeController controller = Get.find();
+  HomeWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -66,10 +69,10 @@ class HomeWidget extends StatelessWidget {
                   text: 'I\'M  ',
                   style: TextStyle(fontSize: 18, color: Colors.white)),
               TextSpan(
-                  text: 'Tanvir Hasan',
+                  text: controller.portfolioData.value.personalInfo?.name??'',
                   style: TextStyle(fontSize: 35, color: Colors.amber)),
               TextSpan(
-                  text: '\n\nNative Android and Flutter \ndeveloper',
+                  text: '\n\n${controller.portfolioData.value.personalInfo?.designation??''}',
                   style: TextStyle(fontSize: 18, color: Colors.white)),
             ]),
           ),
@@ -88,10 +91,10 @@ class HomeWidget extends StatelessWidget {
                   text: 'I\'M  ',
                   style: TextStyle(fontSize: 18, color: Colors.white)),
               TextSpan(
-                  text: 'Tanvir Hasan',
+                  text: controller.portfolioData.value.personalInfo?.name??'',
                   style: TextStyle(fontSize: 35, color: Colors.amber)),
               TextSpan(
-                  text: '\n\nNative Android and Flutter \ndeveloper',
+                  text: '\n\n${controller.portfolioData.value.personalInfo?.designation??''}',
                   style: TextStyle(fontSize: 18, color: Colors.white)),
             ]),
           ),

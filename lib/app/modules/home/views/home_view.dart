@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
 import 'package:portfolio/app/common/custom_text_button.dart';
@@ -23,8 +24,9 @@ class HomeView extends GetView<HomeController> {
 
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.init(context);
     return Scaffold(
-      drawer: CustomDrawer(),
+      drawer: ResponsiveWidget.isMobile(context) ? CustomDrawer() : null,
       body: NestedScrollView(
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
           return <Widget>[
@@ -38,20 +40,26 @@ class HomeView extends GetView<HomeController> {
     );
   }
 
-  Widget _allHomeWidgets() => ListViewObserver(
-        controller: controller.observerController,
-        child: ListView(
-          controller: controller.scrollController,
-          children: [
-            HomeWidget(),
-            AboutWidget(),
-            SkillWidget(),
-            ProjectsWidget(),
-            ExperienceWidget(),
-            BlogsWidget(),
-            ContactWidget(),
-          ],
-        ),
+  Widget _allHomeWidgets() => Obx(
+        () => controller.isLoading.value
+            ? const Center(
+                child: CircularProgressIndicator(),
+              )
+            : ListViewObserver(
+                controller: controller.observerController,
+                child: ListView(
+                  controller: controller.scrollController,
+                  children: [
+                    HomeWidget(),
+                    AboutWidget(),
+                    SkillWidget(),
+                    ProjectsWidget(),
+                    ExperienceWidget(),
+                    BlogsWidget(),
+                    ContactWidget(),
+                  ],
+                ),
+              ),
       );
 
   Widget _divider() => Divider(
