@@ -11,6 +11,46 @@
       "name": "Native Android",
       "details": "",
       "image": "assets/images/android.png"
+    },
+    {
+      "name": "Flutter",
+      "details": "",
+      "image": "assets/images/flutter.png"
+    },
+    {
+      "name": "Java",
+      "details": "",
+      "image": "assets/images/java.png"
+    },
+    {
+      "name": "Kotlin",
+      "details": "",
+      "image": "assets/images/kotlin.png"
+    },
+    {
+      "name": "Dart",
+      "details": "",
+      "image": "assets/images/dart.png"
+    },
+    {
+      "name": "C",
+      "details": "",
+      "image": "assets/images/c.png"
+    },
+    {
+      "name": "SqLite",
+      "details": "",
+      "image": "assets/images/sqlite.png"
+    },
+    {
+      "name": "Firebase",
+      "details": "",
+      "image": "assets/images/firebase.png"
+    },
+    {
+      "name": "Git",
+      "details": "",
+      "image": "assets/images/git.png"
     }
   ],
 
@@ -52,7 +92,17 @@
   "important_link": [
     {
       "name": "Github",
-      "image": "assets/images/android.png",
+      "image": "assets/images/github.png",
+      "link": ""
+    },
+    {
+      "name": "LinkedIn",
+      "image": "assets/images/linkedin.png",
+      "link": ""
+    },
+    {
+      "name": "Facebook",
+      "image": "assets/images/facebook.png",
       "link": ""
     }
   ]

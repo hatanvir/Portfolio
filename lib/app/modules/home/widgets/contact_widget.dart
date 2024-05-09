@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:portfolio/app/core/res/color.dart';
 import 'package:portfolio/app/enums/contact_enum.dart';
 import 'package:portfolio/app/extensions/divider_extension.dart';
 import 'package:portfolio/app/modules/home/controllers/home_controller.dart';
@@ -9,12 +11,13 @@ import 'package:portfolio/app/widgets/responsive_widget.dart';
 
 class ContactWidget extends StatelessWidget {
   HomeController controller = Get.find();
+
   ContactWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.black87,
+      color: primaryColor,
       alignment: Alignment.center,
       child: Column(
         children: [
@@ -31,16 +34,24 @@ class ContactWidget extends StatelessWidget {
               tablet: _contactInfoWidgetLarge()),
           20.height,
           _contactDividerWidget(
-            child: Row(
-              children: [
-                Icon(Icons.email),
-                5.width,
-                Icon(Icons.email),
-                5.width,
-                Icon(Icons.email),
-                5.width,
-                Icon(Icons.email),
-              ],
+            child: SizedBox(
+              height: 30,
+              child: ListView.separated(
+                  shrinkWrap: true,
+                  scrollDirection: Axis.horizontal,
+                  physics: NeverScrollableScrollPhysics(),
+                  itemBuilder: (ctx, i) => Image.asset(
+                        controller
+                                .portfolioData.value.importantLink?[i].image ??
+                            '',
+                        height: 30,
+                        width: 30,
+                    color: Colors.white,
+                      ),
+                  separatorBuilder: (ctx, i) => 10.width,
+                  itemCount:
+                      (controller.portfolioData.value.importantLink ?? [])
+                          .length),
             ),
           ),
           80.height,
@@ -62,13 +73,13 @@ class ContactWidget extends StatelessWidget {
             children: [
               _contactItem(
                   icon: Icons.email_outlined,
-                  text: controller.portfolioData.value.contact?.email??'',
+                  text: controller.portfolioData.value.contact?.email ?? '',
                   color: Colors.amber,
                   type: ContactType.email),
               10.width,
               _contactItem(
                   icon: Icons.phone,
-                  text: controller.portfolioData.value.contact?.phone??'',
+                  text: controller.portfolioData.value.contact?.phone ?? '',
                   color: Colors.amber,
                   type: ContactType.email),
             ],
@@ -76,7 +87,7 @@ class ContactWidget extends StatelessWidget {
           10.height,
           _contactItem(
               icon: Icons.location_on_rounded,
-              text: controller.portfolioData.value.contact?.location??'',
+              text: controller.portfolioData.value.contact?.location ?? '',
               color: Colors.amber,
               type: ContactType.email)
         ],
@@ -87,19 +98,19 @@ class ContactWidget extends StatelessWidget {
         children: [
           _contactItem(
               icon: Icons.email_outlined,
-              text: controller.portfolioData.value.contact?.email??'',
+              text: controller.portfolioData.value.contact?.email ?? '',
               color: Colors.amber,
               type: ContactType.email),
           10.width,
           _contactItem(
               icon: Icons.phone,
-              text: controller.portfolioData.value.contact?.phone??'',
+              text: controller.portfolioData.value.contact?.phone ?? '',
               color: Colors.amber,
               type: ContactType.email),
           10.height,
           _contactItem(
               icon: Icons.location_on_rounded,
-              text: controller.portfolioData.value.contact?.location??'',
+              text: controller.portfolioData.value.contact?.location ?? '',
               color: Colors.amber,
               type: ContactType.email)
         ],
@@ -113,7 +124,7 @@ class ContactWidget extends StatelessWidget {
       InkWell(
         onTap: () {},
         child: Card(
-          color: Colors.black87,
+          color: deepBlueColor,
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
           child: Container(

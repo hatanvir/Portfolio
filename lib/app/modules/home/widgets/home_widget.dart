@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:portfolio/app/common/custom_text_button.dart';
+import 'package:portfolio/app/core/res/color.dart';
 import 'package:portfolio/app/extensions/divider_extension.dart';
 import 'package:portfolio/app/modules/home/controllers/home_controller.dart';
 import 'package:portfolio/app/modules/home/widgets/skill_widget.dart';
@@ -16,7 +17,7 @@ class HomeWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        color: Colors.black87,
+        color: primaryColor,
         alignment: Alignment.center,
         child: ResponsivePadding(
           top: 50,

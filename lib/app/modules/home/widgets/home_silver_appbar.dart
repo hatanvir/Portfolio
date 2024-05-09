@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:portfolio/app/common/custom_text_button.dart';
+import 'package:portfolio/app/core/res/color.dart';
 import 'package:portfolio/app/modules/home/controllers/home_controller.dart';
 import 'package:portfolio/app/widgets/responsive_widget.dart';
 
@@ -21,6 +22,7 @@ class HomeSilverAppbar extends StatelessWidget {
       forceElevated: true,
       title: Text(label),
       iconTheme: IconThemeData(color: Colors.amber),
+      backgroundColor: primaryColor,
       actions: [
         if (!ResponsiveWidget.isMobile(context)) ...[
           CustomTextButton(name: 'Home', onTap: () => jumpTo(index: 0)),

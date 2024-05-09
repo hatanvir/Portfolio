@@ -11,7 +11,7 @@ class CustomTextButton extends StatelessWidget {
     return TextButton(
         onPressed: onTap,
         child: Text(name,style: TextStyle(
-          color: Colors.amber
+          color: Colors.blue
         ),),
     );
   }

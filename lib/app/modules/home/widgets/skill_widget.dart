@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:portfolio/app/core/res/color.dart';
 import 'package:portfolio/app/extensions/divider_extension.dart';
 import 'package:portfolio/app/models/portfolio_data.dart';
 import 'package:portfolio/app/modules/home/controllers/home_controller.dart';
@@ -16,7 +17,7 @@ class SkillWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.black87,
+      color: primaryColor,
       alignment: Alignment.center,
       child: ResponsivePadding(top: 25, bottom: 30,
         child: Column(
@@ -46,14 +47,15 @@ class SkillWidget extends StatelessWidget {
   );
 
   _itemLarge(ImportantLink skill) => Card(
-    elevation: 10,
+    elevation: 15,
+    color: deepBlueColor,
     shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10)
     ),
     child: Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        color: Colors.black45,
+        color: deepBlueColor,
       ),
       padding: EdgeInsets.all(10),
       constraints: BoxConstraints(minWidth: 120, minHeight: 120),
@@ -79,7 +81,7 @@ class SkillWidget extends StatelessWidget {
     child: Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        color: Colors.black45,
+        color: Color(0xFF162030),
       ),
       padding: EdgeInsets.all(10),
       constraints: const BoxConstraints(minWidth: 80, minHeight: 80),
