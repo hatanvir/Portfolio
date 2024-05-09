@@ -6,12 +6,14 @@ import 'package:portfolio/app/core/res/color.dart';
 import 'package:portfolio/app/extensions/divider_extension.dart';
 import 'package:portfolio/app/models/portfolio_data.dart';
 import 'package:portfolio/app/modules/home/controllers/home_controller.dart';
+import 'package:portfolio/app/widgets/common_dialog.dart';
 import 'package:portfolio/app/widgets/common_title.dart';
 import 'package:portfolio/app/widgets/responsive_padding.dart';
 import 'package:portfolio/app/widgets/responsive_widget.dart';
 
 class SkillWidget extends StatelessWidget {
   HomeController controller = Get.find();
+
   SkillWidget({super.key});
 
   @override
@@ -19,7 +21,9 @@ class SkillWidget extends StatelessWidget {
     return Container(
       color: primaryColor,
       alignment: Alignment.center,
-      child: ResponsivePadding(top: 25, bottom: 30,
+      child: ResponsivePadding(
+        top: 25,
+        bottom: 30,
         child: Column(
           children: [
             CommonTitle(
@@ -31,7 +35,7 @@ class SkillWidget extends StatelessWidget {
                 runSpacing: 20,
                 spacing: 15,
                 alignment: WrapAlignment.center,
-                children: (controller.portfolioData.value.skillSet??[])
+                children: (controller.portfolioData.value.skillSet ?? [])
                     .map((e) => skillItem(e))
                     .toList())
           ],
@@ -43,59 +47,80 @@ class SkillWidget extends StatelessWidget {
   Widget skillItem(ImportantLink skill) => ResponsiveWidget(
       desktop: _itemLarge(skill),
       mobile: _itemSmall(skill),
-      tablet: _itemLarge(skill)
-  );
+      tablet: _itemLarge(skill));
 
-  _itemLarge(ImportantLink skill) => Card(
-    elevation: 15,
-    color: deepBlueColor,
-    shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10)
-    ),
-    child: Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        color: deepBlueColor,
-      ),
-      padding: EdgeInsets.all(10),
-      constraints: BoxConstraints(minWidth: 120, minHeight: 120),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Image.asset(skill.image??'',height: 80,width: 80,),
-          15.height,
-          Text(
-            skill.name??'',
-            style: TextStyle(fontSize: 18, color: Colors.white),
-          )
-        ],
-      ),
-    ),
-  );
+  _itemLarge(ImportantLink skill) => InkWell(
+        onTap: () => commonDialog(
+            title: skill.name ?? '',
+            data: skill.details ?? '',
+            buttonBgColor: primaryColor,
+            onTap: () => Get.back()),
+        child: Card(
+          elevation: 15,
+          color: deepBlueColor,
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+          child: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              color: deepBlueColor,
+            ),
+            padding: EdgeInsets.all(10),
+            constraints: BoxConstraints(minWidth: 120, minHeight: 120),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  skill.image ?? '',
+                  height: 80,
+                  width: 80,
+                ),
+                15.height,
+                Text(
+                  skill.name ?? '',
+                  style: TextStyle(fontSize: 18, color: Colors.white),
+                )
+              ],
+            ),
+          ),
+        ),
+      );
 
-  _itemSmall(ImportantLink skill) => Card(
-    elevation: 10,
-    shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10)
-    ),
-    child: Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        color: Color(0xFF162030),
-      ),
-      padding: EdgeInsets.all(10),
-      constraints: const BoxConstraints(minWidth: 80, minHeight: 80),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Image.asset(skill.image??'',height: 80,width: 80,),
-          15.height,
-          Text(
-            skill.name??'',
-            style: TextStyle(fontSize: 18, color: Colors.white),
-          )
-        ],
-      ),
-    ),
-  );
+  _itemSmall(ImportantLink skill) => InkWell(
+        onTap: () => commonDialog(
+            title: skill.name ?? '',
+            data: skill.details ?? '',
+            buttonBgColor: primaryColor,
+            onTap: () => Get.back()
+        ),
+        child: Card(
+          elevation: 10,
+          color: deepBlueColor,
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+          child: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              color: deepBlueColor,
+            ),
+            padding: EdgeInsets.all(10),
+            constraints: const BoxConstraints(minWidth: 80, minHeight: 80),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  skill.image ?? '',
+                  height: 80,
+                  width: 80,
+                ),
+                15.height,
+                Text(
+                  skill.name ?? '',
+                  style: TextStyle(fontSize: 18, color: Colors.white),
+                )
+              ],
+            ),
+          ),
+        ),
+      );
 }

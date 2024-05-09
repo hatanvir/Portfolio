@@ -78,7 +78,10 @@ class HomeWidget extends StatelessWidget {
             ]),
           ),
           10.height,
-          CommonButton()
+          CommonButton(title: 'Contact',
+              onTap: () {
+
+              })
         ],
       );
 
@@ -100,7 +103,8 @@ class HomeWidget extends StatelessWidget {
             ]),
           ),
           20.height,
-          CommonButton()
+          CommonButton(title: 'Contact',
+              onTap: () {})
         ],
       );
 }
