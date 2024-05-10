@@ -56,21 +56,169 @@
 
   "projects":[
     {
-      "name": "E-Commerce",
-      "details": "A simple e-commerce app",
-      "image": "assets/images/android.png",
-      "link": "link"
+      "name": "BRAC mHealth",
+      "details": "mHealth platform provides a digital solution for BRAC CHWs. The main goal of the app is to provide health care to rural areas people.",
+      "image": "assets/images/mhealth.png",
+      "technology": "Android, Java, RxJava, OpenSRP",
+      "link": "https://play.google.com/store/apps/details?id=org.smartregister.brac.hnpp&hl=en&gl=US",
+      "screenshot": [
+        {
+          "image":  "assets/images/mhealth.png"
+        },
+        {
+          "image":  "assets/images/mhealth.png"
+        },
+        {
+          "image":  "assets/images/mhealth.png"
+        },
+        {
+          "image":  "assets/images/mhealth.png"
+        }
+      ]
+    },
+
+    {
+      "name": "InteleHealth",
+      "details": "This is a telemedicine app. This app's main purpose is to connect doctors in urban areas to patients in rural areas to provide healthcare.",
+      "image": "assets/images/intelehealth.png",
+      "link": "https://play.google.com/store/apps/details?id=org.intelehealth.app",
+      "technology": "Android, Java, RxJava, Coroutin, Dagger Hilt",
+      "screenshot": [
+        {
+          "image":  "assets/images/intelehealth.png"
+        },
+        {
+          "image":  "assets/images/intelehealth.png"
+        },
+        {
+          "image":  "assets/images/intelehealth.png"
+        },
+        {
+          "image":  "assets/images/intelehealth.png"
+        }
+      ]
+    },
+
+    {
+      "name": "mSurvey",
+      "details": "This is an online survey management app. This can help an organization to collect surveys. So that they can analyze progress and growth.",
+      "image": "assets/images/msurvey.png",
+      "link": "",
+      "technology": "Flutter, Dart, GetX, Platform Specific code, OpenODK (Open Data Kit)",
+      "screenshot": [
+        {
+          "image":  "assets/images/msurvey.png"
+        },
+        {
+          "image":  "assets/images/msurvey.png"
+        },
+        {
+          "image":  "assets/images/msurvey.png"
+        },
+        {
+          "image":  "assets/images/intelehealth.png"
+        }
+      ]
+    },
+
+    {
+      "name": "Khamar Bondhu",
+      "details": "Khamar Bondhu is a Khamar management app that can help farmers as their full-time assistants.",
+      "image": "assets/images/khamar_bondhu.png",
+      "link": "",
+      "technology": "Flutter, Dart, GetX",
+      "screenshot": [
+        {
+          "image":  "assets/images/khamar_bondhu.png"
+        },
+        {
+          "image":  "assets/images/khamar_bondhu.png"
+        },
+        {
+          "image":  "assets/images/khamar_bondhu.png"
+        },
+        {
+          "image":  "assets/images/khamar_bondhu.png"
+        }
+      ]
+    },
+
+    {
+      "name": "Duck Management",
+      "details": "Khamar Bondhu is a Khamar management app that can help farmers as their full-time assistants.",
+      "image": "assets/images/duck_mng.png",
+      "link": "",
+      "technology": "Flutter, Dart, Riverpod",
+      "screenshot": [
+        {
+          "image":  "assets/images/duck_mng.png"
+        },
+        {
+          "image":  "assets/images/duck_mng.png"
+        },
+        {
+          "image":  "assets/images/duck_mng.png"
+        },
+        {
+          "image":  "assets/images/duck_mng.png"
+        }
+      ]
     }
   ],
 
   "experiences": [
     {
-      "from": "2020",
+      "from": "01 Sep 2021",
       "to": "Present",
-      "position": "Android Developer",
+      "position": "Sr. Software Engineer (Mobile Application)",
       "location": "Dhaka,Bangladesh",
       "jobType": "Full-Time",
-      "responsibility": "Position responsibility",
+      "company": "mPower Social Enterprises Ltd",
+      "responsibility": "• Designing, developing, and bug fixing on Android apps.\n• Develop Android and iOS applications with Flutter.\n• Work with the Open-source smart register platform (OpenSRP) and Open Data Kit (OpenODK).\n• Collaborated with backend team about Restful API.\n• Collaborated with SQA teams.",
+      "technology": "Android, Flutter, Dart"
+    },
+
+    {
+      "from": "01 Jan 2024",
+      "to": "Present",
+      "position": "Sr. Software Engineer (Android)",
+      "location": "Dhaka,Bangladesh",
+      "jobType": "Full-Time",
+      "company": "InteleHealth India",
+      "responsibility": "• Designing, developing, and bug fixing on Android apps.\n• Worked with telemedicine solutions.\n• Worked with MVVM, Coroutines, RxJava, Dagger2, Hilt.\n• Collaborated with backend team about Restful API.\n• Collaborated with SQA teams.",
+      "technology": "Android, Flutter, Dart"
+    },
+
+    {
+      "from": "01 Jul 2021",
+      "to": "31 Dec 2021",
+      "position": "Software Engineer (Mobile Application)",
+      "location": "Dhaka,Bangladesh",
+      "jobType": "Remote, Freelance",
+      "company": "Riseup Lab",
+      "responsibility": "• Designing, developing, and bug fixing on Android and Flutter apps.\n• Worked on live Wallpaper app, News App, E-Learning app, etc\n• Collaborated with backend team about Restful API.\n• Collaborated with SQA teams.",
+      "technology": "Android, Flutter, Dart"
+    },
+
+    {
+      "from": "22 Oct 2020",
+      "to": "30 Aug 2021",
+      "position": "Software Engineer (Mobile Application)",
+      "location": "Dhaka,Bangladesh",
+      "jobType": "Full-Time",
+      "company": "Computer Source Infotech",
+      "responsibility": "• Designing, developing, and bug fixing on Android.\n• Develop Android and iOS applications with Flutter.\n• Developed applications for banking solutions, transport companies, and some groups of companies.",
+      "technology": "Android, Flutter, Dart"
+    },
+
+    {
+      "from": "10 Nov 2019",
+      "to": "20 Oct 2020",
+      "position": "Mobile Application Developer",
+      "location": "Dhaka,Bangladesh",
+      "jobType": "Full-Time",
+      "company": "Dreamploy Pvt Limited",
+      "responsibility": "• Designing, developing, and bug fixing on Android and Flutter apps.\n• Rest API planning and integration.\n• Publishing app on Google Play Store.\n• Worked on freelancing, e-commerce, and news-based applications.",
       "technology": "Android, Flutter, Dart"
     }
   ],

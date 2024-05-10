@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:portfolio/app/common/custom_text_button.dart';
 import 'package:portfolio/app/core/res/color.dart';
@@ -34,24 +35,14 @@ class HomeWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           _introWidget(),
-          const CircleAvatar(
-            radius: 60,
-            backgroundImage: AssetImage(
-              "assets/Tanvir_image.JPG",
-            ),
-          ),
+          Image.asset("assets/images/tanvir.png",height: 300.h,width: 200.w,)
         ],
       );
 
   Widget _smallScreenView() => Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const CircleAvatar(
-            radius: 60,
-            backgroundImage: AssetImage(
-              "assets/Tanvir_image.JPG",
-            ),
-          ),
+          Image.asset("assets/images/tanvir.png"),
           20.height,
           ResponsiveWidget(
             desktop: _introWidget(),

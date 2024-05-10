@@ -38,61 +38,83 @@ class ExperienceWidget extends StatelessWidget {
                   (controller.portfolioData.value.experiences ?? []).length,
               itemBuilder: (ctx, i) =>
                   _item(controller.portfolioData.value.experiences![i]),
-              separatorBuilder: (ctx, i) => 15.height,
+              separatorBuilder: (ctx, i) => 20.height,
             )
           ],
         ),
       ),
     );
-    ;
   }
 
-  Widget _item(Experience experience) => Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            '${experience.from ?? ''} - ${experience.to ?? ''}',
-            style: TextStyle(color: Colors.white),
-          ),
-          10.width,
-          _separateWidget(),
-          5.width,
-          _positionDetailsWidget(experience)
-        ],
-      );
+  _item(Experience experience) => Container(
+    decoration: BoxDecoration(
+        border: Border.all(color: Colors.white),
+        borderRadius: BorderRadius.circular(10)),
+    padding: const EdgeInsets.all(15),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            _companyWidget(experience),
 
-  Widget _separateWidget() => Column(
-        children: [
-          Icon(
-            Icons.do_not_disturb_on_total_silence,
-            color: Colors.amber,
-          ),
-          Container(
-            width: 2,
-            color: Colors.white,
-          ),
-        ],
-      );
-
-  _positionDetailsWidget(Experience experience) => Expanded(
-        child: RichText(
-          text: TextSpan(children: [
-            TextSpan(
-                text: '${experience.position}\n',
-                style: TextStyle(fontSize: 30, color: Colors.white)),
-            TextSpan(
-                text: '${experience.location}\n\n',
-                style: TextStyle(fontSize: 20, color: Colors.white)),
-            TextSpan(
-                text: '${experience.responsibility}\n\n',
-                style: TextStyle(fontSize: 18, color: Colors.white54)),
-            TextSpan(
-                text: 'Technology: ${experience.technology}',
-                style: TextStyle(
-                    fontSize: 18,
-                    color: Colors.white54,
-                    fontWeight: FontWeight.bold)),
-          ]),
+          ],
         ),
       );
+
+  Widget _companyWidget(Experience experience) => Row(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+     Expanded(
+       flex: 1,
+       child:  Image.asset('assets/images/android.png',height: 80,width: 80,),
+     ),
+      Expanded(
+        flex: 9,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text('mPower Social Enterprice',style: TextStyle(color: Colors.white),),
+            _positionWidget(experience),
+            _positionDetailsWidget(experience)
+          ],
+        ),
+      )
+    ],
+  );
+  
+  Widget _positionWidget(Experience experience) => Row(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    children: [
+      Expanded(
+        flex: 8,
+        child: Text( '${experience.position}',
+          style: const TextStyle(fontSize: 30, color: Colors.white),
+        ),
+      ),
+      Expanded(
+        flex: 2,
+        child: Text(
+            '${experience.from} - ${experience.to}\n',
+            textAlign: TextAlign.end,
+            style: const TextStyle(fontSize: 15, color: Colors.white)),
+      )
+    ],
+  );
+
+  Widget _positionDetailsWidget(Experience experience) => RichText(
+    text: TextSpan(children: [
+      TextSpan(
+          text: '${experience.location}\n\n',
+          style: const TextStyle(fontSize: 20, color: Colors.white)),
+      TextSpan(
+          text: '${experience.responsibility}\n\n',
+          style: const TextStyle(fontSize: 18, color: Colors.white54)),
+      TextSpan(
+          text: 'Technology: ${experience.technology}',
+          style: const TextStyle(
+              fontSize: 18,
+              color: Colors.white54,
+              fontWeight: FontWeight.bold)),
+    ]),
+  );
 }
