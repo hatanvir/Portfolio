@@ -6,6 +6,7 @@ import 'package:portfolio/app/core/res/color.dart';
 import 'package:portfolio/app/enums/contact_enum.dart';
 import 'package:portfolio/app/extensions/divider_extension.dart';
 import 'package:portfolio/app/modules/home/controllers/home_controller.dart';
+import 'package:portfolio/app/utils/UrlLauncherUtils.dart';
 import 'package:portfolio/app/widgets/common_title.dart';
 import 'package:portfolio/app/widgets/responsive_widget.dart';
 
@@ -75,13 +76,21 @@ class ContactWidget extends StatelessWidget {
                   icon: Icons.email_outlined,
                   text: controller.portfolioData.value.contact?.email ?? '',
                   color: Colors.amber,
-                  type: ContactType.email),
+                  type: ContactType.email,
+                  onTap: (){
+                    UrlLauncherUtils.launchEmail(email: controller.portfolioData.value.contact?.email ?? '');
+                  }
+              ),
               10.width,
               _contactItem(
                   icon: Icons.phone,
                   text: controller.portfolioData.value.contact?.phone ?? '',
                   color: Colors.amber,
-                  type: ContactType.email),
+                  type: ContactType.phone,
+                  onTap: (){
+                    UrlLauncherUtils.launchPhone(phone: controller.portfolioData.value.contact?.phone ?? '');
+                  }
+              ),
             ],
           ),
           10.height,
@@ -89,7 +98,11 @@ class ContactWidget extends StatelessWidget {
               icon: Icons.location_on_rounded,
               text: controller.portfolioData.value.contact?.location ?? '',
               color: Colors.amber,
-              type: ContactType.email)
+              type: ContactType.email,
+              onTap: (){
+
+              }
+          )
         ],
       );
 
@@ -100,19 +113,28 @@ class ContactWidget extends StatelessWidget {
               icon: Icons.email_outlined,
               text: controller.portfolioData.value.contact?.email ?? '',
               color: Colors.amber,
-              type: ContactType.email),
+              type: ContactType.email,
+              onTap: (){
+                UrlLauncherUtils.launchEmail(email: controller.portfolioData.value.contact?.email ?? '');
+              }),
           10.width,
           _contactItem(
               icon: Icons.phone,
               text: controller.portfolioData.value.contact?.phone ?? '',
               color: Colors.amber,
-              type: ContactType.email),
+              type: ContactType.phone,
+              onTap: (){
+                UrlLauncherUtils.launchPhone(phone: controller.portfolioData.value.contact?.phone ?? '');
+              }),
           10.height,
           _contactItem(
               icon: Icons.location_on_rounded,
               text: controller.portfolioData.value.contact?.location ?? '',
               color: Colors.amber,
-              type: ContactType.email)
+              type: ContactType.email,
+              onTap: (){
+
+              })
         ],
       );
 
@@ -120,16 +142,16 @@ class ContactWidget extends StatelessWidget {
           {required IconData icon,
           required String text,
           required MaterialColor color,
-          required ContactType type}) =>
+          required ContactType type, required Function() onTap}) =>
       InkWell(
-        onTap: () {},
+        onTap: onTap,
         child: Card(
           color: deepBlueColor,
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
           child: Container(
             padding: const EdgeInsets.all(15),
-            width: 300,
+            width: 350,
             child: Row(
               children: [
                 Icon(

@@ -2,54 +2,54 @@
   "personal_info": {
     "name": "Tanvir Hasan",
     "designation": "Native Android and Flutter \ndeveloper",
-    "about": "Self-motivated and hardworking Android and Flutter developer. Dedicated to learning new technology and love to solve problem in online judge.",
+    "about": "Self-motivated and hardworking Android and Flutter developer. Dedicated to continuous learning, development, and implementation of new technologies to optimize the productivity of production and to deliver creative applications.",
     "cv_download_link": ""
   },
 
   "skill_set":[
     {
       "name": "Android",
-      "details": "hdfsidhf sodifosidfu osdfuoisdfu sdf oisdfoisd fsdf sodifoisdf sdf osdfiosdf sdfisdfu osduf sf sdoifoisdf sdf osdf sdf osdiuf sdfuiosdf  sdoifusdif  sdfuoisduf sdofu  sodfuoisdfu ",
+      "details": "Have more than 5 years of experience with native Android.\nAnd familiar with technology like Coroutine, Dagger 2, Hilt, Retrofit, Jetpack libraries, Glide, MVVM, etc\n\n\n",
       "image": "assets/images/android.png"
     },
     {
       "name": "Flutter",
-      "details": "",
+      "details": "Worked on numerous projects and have 4+ years of experience in it. Used technology like MVVM, GetX, Riverpod, Bloc, Isolates, etc",
       "image": "assets/images/flutter.png"
     },
     {
       "name": "Java",
-      "details": "",
+      "details": "Have 5+ years of experience in it. Mostly used java on native android development. Also tried java backend development framework like spring boot for the sake of interest.",
       "image": "assets/images/java.png"
     },
     {
       "name": "Kotlin",
-      "details": "",
+      "details": "Have more 3+ years of experience in it. Using Kotlin for native Android development.",
       "image": "assets/images/kotlin.png"
     },
     {
       "name": "Dart",
-      "details": "",
+      "details": "Have 4+ years of experience in it. Mostly used this language with Flutter.",
       "image": "assets/images/dart.png"
     },
     {
       "name": "C",
-      "details": "",
+      "details": "C is the first programming language that I have learned. Mostly used it for problem-solving.",
       "image": "assets/images/c.png"
     },
     {
       "name": "SqLite",
-      "details": "",
+      "details": "Used it with native android development to store data on local db.",
       "image": "assets/images/sqlite.png"
     },
     {
       "name": "Firebase",
-      "details": "",
+      "details": "Used firebase service like authentication, notification, realtime database, crashlytics etc",
       "image": "assets/images/firebase.png"
     },
     {
       "name": "Git",
-      "details": "",
+      "details": "Using git for 6+ years to maintain versioning system of my projects. Used many cloud based platform like github, bitbucket, gitlab etc",
       "image": "assets/images/git.png"
     }
   ],
@@ -225,9 +225,15 @@
 
   "blogs": [
     {
-      "title": "New blog",
-      "image": "assets/images/android.png",
-      "link": "Android, Flutter, Dart"
+      "title": "এন্ড্রয়েড (Android) এ  Saripaar Library দিয়ে ফরম ভ্যালিডেসন ",
+      "image": "assets/images/android_saripaar_blog.png",
+      "link": "https://teachtechnology24.blogspot.com/2021/01/saaripar-library.html"
+    },
+
+    {
+      "title": "কম Time complexity তে একটি সংখ্যার Divisor বের করার অ্যালগরিদম (Algorithm)",
+      "image": "assets/images/divisor_algorithm_blog.png",
+      "link": "https://teachtechnology24.blogspot.com/2018/03/time-complexity-divisor.html"
     }
   ],
 

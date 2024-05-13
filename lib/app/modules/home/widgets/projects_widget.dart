@@ -66,7 +66,7 @@ class ProjectsWidget extends StatelessWidget {
           .map((e) => projectItem(e))
           .toList());
 
-  _projectListSmall() => SizedBox(
+  Widget _projectListSmall() => SizedBox(
     height: 340,
     child: ListView.separated(
       scrollDirection: Axis.horizontal,
