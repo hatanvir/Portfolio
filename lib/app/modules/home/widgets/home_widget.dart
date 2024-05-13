@@ -35,14 +35,14 @@ class HomeWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           _introWidget(),
-          Image.asset("assets/images/tanvir.png",height: 300.h,width: 200.w,)
+          Image.asset("assets/images/tanvir.png",height: 300.h,)
         ],
       );
 
   Widget _smallScreenView() => Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.asset("assets/images/tanvir.png"),
+          Image.asset("assets/images/tanvir.png",height: 300.h,),
           20.height,
           ResponsiveWidget(
             desktop: _introWidget(),
