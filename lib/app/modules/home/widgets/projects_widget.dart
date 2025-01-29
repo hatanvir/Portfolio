@@ -48,11 +48,11 @@ class ProjectsWidget extends StatelessWidget {
         color: deepBlueColor,
       ),
       padding: const EdgeInsets.all(10),
-      constraints: const BoxConstraints(minWidth: 340, minHeight: 340),
+      constraints: const BoxConstraints(minWidth: 200, minHeight: 200),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.asset(e.image??'',height: 300,width: 300,),
+          Image.asset(e.image??'',height: 200,width: 200,),
         ],
       ),
     ),
@@ -67,7 +67,7 @@ class ProjectsWidget extends StatelessWidget {
           .toList());
 
   Widget _projectListSmall() => SizedBox(
-    height: 340,
+    height: 240,
     child: ListView.separated(
       scrollDirection: Axis.horizontal,
         itemBuilder: (ctx,i)=> projectItem(controller.portfolioData.value.projects![i]),
