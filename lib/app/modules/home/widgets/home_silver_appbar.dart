@@ -21,7 +21,7 @@ class HomeSilverAppbar extends StatelessWidget {
       snap: false,
       forceElevated: true,
       title: Text(label),
-      iconTheme: IconThemeData(color: Colors.amber),
+      iconTheme: const IconThemeData(color: Colors.amber),
       backgroundColor: primaryColor,
       actions: [
         if (!ResponsiveWidget.isMobile(context)) ...[

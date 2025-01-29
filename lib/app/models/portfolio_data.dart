@@ -97,6 +97,8 @@ class Experience {
   String? to;
   String? position;
   String? location;
+  String? company;
+  String? companyLogo;
   String? jobType;
   String? responsibility;
   String? technology;
@@ -106,6 +108,8 @@ class Experience {
     this.to,
     this.position,
     this.location,
+    this.company,
+    this.companyLogo,
     this.jobType,
     this.responsibility,
     this.technology,
@@ -116,6 +120,8 @@ class Experience {
     to: json["to"],
     position: json["position"],
     location: json["location"],
+    company: json["company"],
+    companyLogo: json["company_logo"],
     jobType: json["jobType"],
     responsibility: json["responsibility"],
     technology: json["technology"],

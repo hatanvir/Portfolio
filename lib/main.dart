@@ -12,7 +12,7 @@ void main() async{
   await ScreenUtil.ensureScreenSize();
   runApp(
     GetMaterialApp(
-      title: "Tanvir Hasan Portfolio",
+      title: "Portfolio",
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
       themeMode: ThemeMode.dark,

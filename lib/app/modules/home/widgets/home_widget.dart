@@ -57,21 +57,21 @@ class HomeWidget extends StatelessWidget {
         children: [
           RichText(
             text: TextSpan(children: [
-              TextSpan(
+              const TextSpan(
                   text: 'I\'M  ',
                   style: TextStyle(fontSize: 18, color: Colors.white)),
               TextSpan(
                   text: controller.portfolioData.value.personalInfo?.name??'',
-                  style: TextStyle(fontSize: 35, color: Colors.amber)),
+                  style: const TextStyle(fontSize: 35, color: Colors.amber)),
               TextSpan(
                   text: '\n\n${controller.portfolioData.value.personalInfo?.designation??''}',
-                  style: TextStyle(fontSize: 18, color: Colors.white)),
+                  style: const TextStyle(fontSize: 18, color: Colors.white)),
             ]),
           ),
           10.height,
           CommonButton(title: 'Contact',
               onTap: () {
-
+                jumpTo(index: 6);
               })
         ],
       );
@@ -82,20 +82,28 @@ class HomeWidget extends StatelessWidget {
           RichText(
             textAlign: TextAlign.center,
             text: TextSpan(children: [
-              TextSpan(
+              const TextSpan(
                   text: 'I\'M  ',
                   style: TextStyle(fontSize: 18, color: Colors.white)),
               TextSpan(
                   text: controller.portfolioData.value.personalInfo?.name??'',
-                  style: TextStyle(fontSize: 35, color: Colors.amber)),
+                  style: const TextStyle(fontSize: 35, color: Colors.amber)),
               TextSpan(
                   text: '\n\n${controller.portfolioData.value.personalInfo?.designation??''}',
-                  style: TextStyle(fontSize: 18, color: Colors.white)),
+                  style: const TextStyle(fontSize: 18, color: Colors.white)),
             ]),
           ),
           20.height,
           CommonButton(title: 'Contact',
-              onTap: () {})
+              onTap: () {
+              print('tttt');
+                jumpTo(index: 6);
+              })
         ],
       );
+
+      void jumpTo({required int index}) {
+    controller.observerController?.animateTo(
+        index: index, duration: const Duration(seconds: 1), curve: Curves.ease);
+  }
 }
