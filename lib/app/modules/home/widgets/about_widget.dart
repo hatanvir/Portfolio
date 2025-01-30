@@ -30,31 +30,32 @@ class AboutWidget extends StatelessWidget {
   }
 
   Widget _largeScreenWidget() => Column(
+    mainAxisAlignment: MainAxisAlignment.start,
+    crossAxisAlignment: CrossAxisAlignment.start,
     children: [
-      Align(
-          alignment: Alignment.centerLeft,
-          child: CommonTitle(title: 'About',fontSize: 40,)),
-      10.height,
-      Row(
-        children: [
-          Container(
-            height: 5,
-            color: Colors.amber,
-            width: 100,
-          ),
-
-          15.width,
-
-          Expanded(
-            child: RichText(
-              text: TextSpan(
-                  children: [
-                    TextSpan(text: controller.portfolioData.value.personalInfo?.about??'',style: TextStyle(fontSize: 18,color: Colors.white)),
-                  ]
-              ),
+      IntrinsicWidth(
+        child: Column(
+          children: [
+            Align(
+                alignment: Alignment.centerLeft,
+                child: CommonTitle(title: 'About',fontSize: 40,)),
+        
+                Container(
+              height: 5,
+              color: Colors.amber,
             ),
-          ),
-        ],
+          ],
+        ),
+      ),
+
+      15.height,
+      
+      RichText(
+        text: TextSpan(
+            children: [
+              TextSpan(text: controller.portfolioData.value.personalInfo?.about??'',style: const TextStyle(fontSize: 18,color: Colors.white)),
+            ]
+        ),
       )
     ],
   );
@@ -65,28 +66,29 @@ class AboutWidget extends StatelessWidget {
     children: [
       CommonTitle(title: 'About',fontSize: 40,),
       10.height,
-      Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            height: 80,
-            color: Colors.amber,
-            width: 5,
-          ),
-
-          15.width,
-
-          Expanded(
-            child: RichText(
-              text: TextSpan(
-                  children: [
-                    TextSpan(text: 'Self-motivated and hardworking Android and Flutter developer. Dedicated to learning new technology and love to solve problem in online judge.',style: TextStyle(fontSize: 18,color: Colors.white)),
-                  ]
+      IntrinsicHeight(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              color: Colors.amber,
+              width: 5,
+            ),
+        
+            15.width,
+        
+            Expanded(
+              child: RichText(
+                text: TextSpan(
+                    children: [
+                      TextSpan(text: controller.portfolioData.value.personalInfo?.about??'',style: const TextStyle(fontSize: 18,color: Colors.white)),
+                    ]
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       )
     ],
   );

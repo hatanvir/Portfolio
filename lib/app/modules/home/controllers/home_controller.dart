@@ -17,20 +17,9 @@ class HomeController extends GetxController {
     getPortfolioData();
   }
 
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
   void getPortfolioData() async{
     isLoading.value = true;
     var str = await rootBundle.loadString('assets/portfolio_info.json');
-    print(str);
     portfolioData.value = portfolioDataFromJson(str);
     isLoading.value = false;
   }

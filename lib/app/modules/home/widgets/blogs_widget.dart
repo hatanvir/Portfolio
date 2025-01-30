@@ -6,7 +6,7 @@ import 'package:portfolio/app/core/res/color.dart';
 import 'package:portfolio/app/extensions/divider_extension.dart';
 import 'package:portfolio/app/models/portfolio_data.dart';
 import 'package:portfolio/app/modules/home/controllers/home_controller.dart';
-import 'package:portfolio/app/utils/UrlLauncherUtils.dart';
+import 'package:portfolio/app/utils/url_launcher_utils.dart';
 import 'package:portfolio/app/widgets/common_title.dart';
 import 'package:portfolio/app/widgets/responsive_padding.dart';
 import 'package:portfolio/app/widgets/responsive_widget.dart';

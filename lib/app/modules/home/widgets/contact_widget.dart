@@ -6,7 +6,7 @@ import 'package:portfolio/app/core/res/color.dart';
 import 'package:portfolio/app/enums/contact_enum.dart';
 import 'package:portfolio/app/extensions/divider_extension.dart';
 import 'package:portfolio/app/modules/home/controllers/home_controller.dart';
-import 'package:portfolio/app/utils/UrlLauncherUtils.dart';
+import 'package:portfolio/app/utils/url_launcher_utils.dart';
 import 'package:portfolio/app/widgets/common_title.dart';
 import 'package:portfolio/app/widgets/responsive_widget.dart';
 
@@ -40,15 +40,21 @@ class ContactWidget extends StatelessWidget {
               child: ListView.separated(
                   shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
-                  physics: NeverScrollableScrollPhysics(),
-                  itemBuilder: (ctx, i) => Image.asset(
-                        controller
-                                .portfolioData.value.importantLink?[i].image ??
-                            '',
-                        height: 30,
-                        width: 30,
-                    color: Colors.white,
-                      ),
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemBuilder: (ctx, i) => InkWell(
+                    onTap: (){
+                      UrlLauncherUtils.launchFullUrl(url: controller
+                                  .portfolioData.value.importantLink?[i].link??'');
+                    },
+                    child: Image.asset(
+                          controller
+                                  .portfolioData.value.importantLink?[i].image ??
+                              '',
+                          height: 30,
+                          width: 30,
+                      color: Colors.white,
+                        ),
+                  ),
                   separatorBuilder: (ctx, i) => 10.width,
                   itemCount:
                       (controller.portfolioData.value.importantLink ?? [])

@@ -2,11 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:portfolio/app/common/custom_text_button.dart';
 import 'package:portfolio/app/core/res/color.dart';
 import 'package:portfolio/app/extensions/divider_extension.dart';
 import 'package:portfolio/app/modules/home/controllers/home_controller.dart';
-import 'package:portfolio/app/modules/home/widgets/skill_widget.dart';
 import 'package:portfolio/app/widgets/common_button.dart';
 import 'package:portfolio/app/widgets/responsive_padding.dart';
 import 'package:portfolio/app/widgets/responsive_widget.dart';
@@ -96,7 +94,6 @@ class HomeWidget extends StatelessWidget {
           20.height,
           CommonButton(title: 'Contact',
               onTap: () {
-              print('tttt');
                 jumpTo(index: 6);
               })
         ],

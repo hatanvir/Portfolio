@@ -17,7 +17,11 @@ void main() async{
       getPages: AppPages.routes,
       themeMode: ThemeMode.dark,
       scrollBehavior: const MaterialScrollBehavior().copyWith(
-        dragDevices: {PointerDeviceKind.mouse},
+        dragDevices: {
+          PointerDeviceKind.mouse,
+          PointerDeviceKind.touch,
+          PointerDeviceKind.trackpad
+          },
       ),
       darkTheme: ThemeData(
         fontFamily: GoogleFonts.montserrat().fontFamily,

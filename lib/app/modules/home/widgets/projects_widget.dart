@@ -27,9 +27,9 @@ class ProjectsWidget extends StatelessWidget {
             10.height,
             10.height,
             ResponsiveWidget(
-              desktop: _projectListLarge(),
-              tablet: _projectListLarge(),
-              mobile: _projectListSmall(),
+              desktop: _projectListDesktop(),
+              tablet: _projectListTablet(),
+              mobile: _projectListMobile(),
             )
           ],
         ),
@@ -58,7 +58,36 @@ class ProjectsWidget extends StatelessWidget {
     ),
   );
 
-  Widget _projectListLarge() => Wrap(
+  Widget projectItemDesktop(ImportantLink e) => Card(
+    elevation: 10,
+    shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10)
+    ),
+    child: Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        color: deepBlueColor,
+      ),
+      padding: const EdgeInsets.all(10),
+      constraints: const BoxConstraints(minWidth: 350, minHeight: 350),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Image.asset(e.image??'',height: 350,width: 350,),
+        ],
+      ),
+    ),
+  );
+
+    Widget _projectListDesktop() => Wrap(
+      runSpacing: 20,
+      spacing: 15,
+      alignment: WrapAlignment.center,
+      children: (controller.portfolioData.value.projects??[])
+          .map((e) => projectItemDesktop(e))
+          .toList());
+
+  Widget _projectListTablet() => Wrap(
       runSpacing: 20,
       spacing: 15,
       alignment: WrapAlignment.center,
@@ -66,7 +95,7 @@ class ProjectsWidget extends StatelessWidget {
           .map((e) => projectItem(e))
           .toList());
 
-  Widget _projectListSmall() => SizedBox(
+  Widget _projectListMobile() => SizedBox(
     height: 240,
     child: ListView.separated(
       scrollDirection: Axis.horizontal,

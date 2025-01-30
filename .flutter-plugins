@@ -4,6 +4,7 @@ path_provider_android=/home/tanvir/.pub-cache/hosted/pub.dev/path_provider_andro
 path_provider_foundation=/home/tanvir/.pub-cache/hosted/pub.dev/path_provider_foundation-2.4.0/
 path_provider_linux=/home/tanvir/.pub-cache/hosted/pub.dev/path_provider_linux-2.2.1/
 path_provider_windows=/home/tanvir/.pub-cache/hosted/pub.dev/path_provider_windows-2.3.0/
+sqflite=/home/tanvir/.pub-cache/hosted/pub.dev/sqflite-2.3.3+1/
 url_launcher=/home/tanvir/.pub-cache/hosted/pub.dev/url_launcher-6.3.0/
 url_launcher_android=/home/tanvir/.pub-cache/hosted/pub.dev/url_launcher_android-6.3.7/
 url_launcher_ios=/home/tanvir/.pub-cache/hosted/pub.dev/url_launcher_ios-6.3.1/

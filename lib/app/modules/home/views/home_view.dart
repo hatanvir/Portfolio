@@ -62,7 +62,7 @@ class HomeView extends GetView<HomeController> {
               ),
       );
 
-  Widget _divider() => Divider(
+  Widget _divider() => const Divider(
         color: Colors.black,
         height: 1,
       );
